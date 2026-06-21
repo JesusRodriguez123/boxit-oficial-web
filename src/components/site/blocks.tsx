@@ -71,7 +71,7 @@ export function BoxCards() {
               rel="noopener noreferrer"
               className={`mt-6 rounded-md px-4 py-3 text-center text-sm font-semibold transition-colors ${
                 box.featured
-                  ? "bg-primary text-primary-foreground hover:bg-primary-dark"
+                  ? "bg-primary text-primary-foreground hover:bg-black"
                   : "border border-primary text-primary hover:bg-accent"
               }`}
             >
@@ -140,7 +140,7 @@ export function CtaBand({
           </a>
           <Link
             to="/contacto"
-            className="inline-flex items-center justify-center rounded-md border border-primary-foreground/40 px-6 py-3 font-semibold text-primary-foreground hover:bg-primary-dark"
+            className="inline-flex items-center justify-center rounded-md border border-primary-foreground/40 px-6 py-3 font-semibold text-primary-foreground hover:bg-black"
           >
             Ver ubicación y contacto
           </Link>

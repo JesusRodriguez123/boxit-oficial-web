@@ -40,7 +40,7 @@ export function Header() {
             href={whatsappLink(DEFAULT_WA_MESSAGE)}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
+            className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-black"
           >
             Consultar box
           </a>

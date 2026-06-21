@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import heroStorage from "@/assets/hero-storage.jpg";
 import { ShieldCheck, KeyRound, Truck, Building2, Plane, MapPin, ArrowRight } from "lucide-react";
 import { BoxCards, CtaBand, Faq, SectionHeading } from "@/components/site/blocks";
+import { PromoOfferBanner } from "@/components/site/PromoOffer";
 import { Reveal } from "@/components/site/Reveal";
 import { TRUST_POINTS, whatsappLink, DEFAULT_WA_MESSAGE } from "@/lib/site-data";
 
@@ -63,50 +65,87 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-linear-to-br from-primary-dark via-primary to-[#2563eb]">
-        {/* Subtle noise texture overlay */}
+        {/* Noise texture */}
         <div
           className="absolute inset-0 -z-10 opacity-[0.07]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           }}
         />
-        {/* Soft glow orbs */}
+        {/* Glow orbs */}
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl" />
         <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-300/15 blur-3xl" />
 
-        <div className="container-page relative z-10 flex min-h-[70vh] flex-col justify-center py-20 animate-fade-in">
-          <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-semibold text-white backdrop-blur-sm">
-            <MapPin className="h-4 w-4" /> Godoy Cruz, Mendoza
-          </span>
-          <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-            Más espacio para tu vida y tu negocio
-          </h1>
-          <p className="mt-5 max-w-xl text-lg text-white/90">
-            Bauleras y guardamuebles seguros en Godoy Cruz. Guardá lo que necesites, el tiempo que
-            necesites, y pagá solo por el espacio que usás.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={whatsappLink(DEFAULT_WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 font-semibold text-primary-dark transition-colors hover:bg-white/90"
+        <div className="container-page relative z-10 grid min-h-[70vh] items-center gap-12 py-20 lg:grid-cols-2">
+          {/* Texto */}
+          <div>
+            <span
+              className="inline-flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-sm font-semibold text-white backdrop-blur-sm"
+              style={{ animation: "fadeInUp 0.6s ease both", animationDelay: "0ms" }}
             >
-              Consultar disponibilidad
-            </a>
-            <Link
-              to="/bauleras"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/20"
+              <MapPin className="h-4 w-4" /> Godoy Cruz, Mendoza
+            </span>
+            <h1
+              className="mt-4 text-4xl font-extrabold leading-[1.05] text-white sm:text-5xl lg:text-6xl"
+              style={{ animation: "fadeInUp 0.7s ease both", animationDelay: "120ms" }}
             >
-              Ver tamaños y precios <ArrowRight className="h-4 w-4" />
-            </Link>
+              Más espacio para tu vida y tu negocio
+            </h1>
+            <p
+              className="mt-5 text-lg leading-relaxed text-white/80"
+              style={{ animation: "fadeInUp 0.7s ease both", animationDelay: "240ms" }}
+            >
+              Bauleras y guardamuebles seguros en Godoy Cruz. Guardá lo que necesites, el tiempo que necesites, y pagá solo por el espacio que usás.
+            </p>
+            <div
+              className="mt-8 flex flex-wrap gap-3"
+              style={{ animation: "fadeInUp 0.7s ease both", animationDelay: "360ms" }}
+            >
+              <a
+                href={whatsappLink(DEFAULT_WA_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3.5 font-semibold text-primary-dark transition-colors hover:bg-black hover:text-white"
+              >
+                Consultar disponibilidad
+              </a>
+              <Link
+                to="/bauleras"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/30 bg-white/10 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-black hover:border-black"
+              >
+                Ver tamaños y precios <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <ul
+              className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/70"
+              style={{ animation: "fadeInUp 0.7s ease both", animationDelay: "480ms" }}
+            >
+              <li className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-sky-300" /> Acceso seguro y controlado</li>
+              <li className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-sky-300" /> Sin contratos largos</li>
+            </ul>
           </div>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85">
-            <li className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-sky-200" /> Acceso seguro y controlado</li>
-            <li className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-sky-200" /> Sin contratos largos</li>
-          </ul>
+
+          {/* Imagen */}
+          <div
+            className="hidden lg:block"
+            style={{ animation: "fadeInUp 0.9s ease both", animationDelay: "200ms" }}
+          >
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20">
+              <img
+                src={heroStorage}
+                alt="Pasillo de bauleras en Boxit, Godoy Cruz"
+                className="h-[420px] w-full object-cover object-center"
+              />
+              {/* Toque de gradiente en los bordes para integrar con el fondo */}
+              <div className="absolute inset-0 rounded-2xl ring-inset ring-white/10" />
+            </div>
+          </div>
         </div>
       </section>
+
+      <Reveal>
+        <PromoOfferBanner />
+      </Reveal>
 
       {/* Trust */}
       <section className="section-pad">
@@ -122,6 +161,7 @@ function Home() {
           ))}
         </div>
       </section>
+
 
       {/* Boxes */}
       <section className="section-pad bg-secondary">
@@ -143,31 +183,35 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="section-pad">
+      <section className="section-pad bg-primary-dark">
         <div className="container-page">
           <Reveal>
-            <SectionHeading
-              eyebrow="Servicios"
-              title="Soluciones de guardado para cada necesidad"
-              subtitle="Particulares, empresas y turistas: tenemos un espacio para vos en Godoy Cruz."
-            />
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/50">Servicios</p>
+              <h2 className="mt-2 text-3xl font-extrabold text-white sm:text-4xl">
+                Soluciones de guardado para cada necesidad
+              </h2>
+              <p className="mt-3 text-base text-white/60">
+                Particulares, empresas y turistas: tenemos un espacio para vos en Godoy Cruz.
+              </p>
+            </div>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {SERVICES.map((s, i) => (
               <Reveal key={s.to} delay={i * 100}>
                 <Link
                   to={s.to}
-                  className="group flex h-full items-start gap-4 rounded-xl border border-border bg-card p-6 shadow-card transition-colors hover:border-primary"
+                  className="group flex h-full items-start gap-4 rounded-xl border border-white/10 bg-white/10 p-6 transition-all hover:border-white/30 hover:bg-white/15"
                 >
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-accent text-primary">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-white/15 text-white transition-colors group-hover:bg-white group-hover:text-primary-dark">
                     <s.icon className="h-6 w-6" />
                   </span>
                   <div className="min-w-0">
-                    <h3 className="flex items-center gap-1.5 text-lg font-bold text-ink">
+                    <h3 className="flex items-center gap-1.5 text-lg font-bold text-white">
                       {s.title}
-                      <ArrowRight className="h-4 w-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
+                      <ArrowRight className="h-4 w-4 text-white/60 opacity-0 transition-opacity group-hover:opacity-100" />
                     </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+                    <p className="mt-1 text-sm text-white/55">{s.desc}</p>
                   </div>
                 </Link>
               </Reveal>

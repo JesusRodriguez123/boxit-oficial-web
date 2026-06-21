@@ -49,7 +49,7 @@ export function ServicePage(props: ServicePageProps) {
                 href={whatsappLink(props.waMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-primary-dark"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition-colors hover:bg-black"
               >
                 Consultar por WhatsApp
               </a>
